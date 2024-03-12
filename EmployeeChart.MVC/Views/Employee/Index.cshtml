@@ -1,0 +1,30 @@
+﻿@model List<EmployeeTimeViewModel>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <!-- This centers the column -->
+        <div class="col-lg-10">
+            <!-- Change the size here to adjust width -->
+            <!-- Your table goes here -->
+            <div class="table-responsive">
+                <table class="table table-hover ">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Employee Name</th>
+                            <th scope="col" class="text-center">Total Time Worked (Hours)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr class="@(item.TotalTimeWorked < 100 ? "table-danger" : "")">
+                                <td>@item.EmployeeName</td>
+                                <td class="text-center">@item.TotalTimeWorked.ToString("F2")</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
