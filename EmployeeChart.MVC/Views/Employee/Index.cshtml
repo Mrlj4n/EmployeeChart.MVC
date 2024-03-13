@@ -2,10 +2,7 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <!-- This centers the column -->
         <div class="col-lg-10">
-            <!-- Change the size here to adjust width -->
-            <!-- Your table goes here -->
             <div class="table-responsive">
                 <table class="table table-hover ">
                     <thead class="thead-dark">
@@ -18,7 +15,7 @@
                         @foreach (var item in Model)
                         {
                             <tr class="@(item.TotalTimeWorked < 100 ? "table-danger" : "")">
-                                <td>@item.EmployeeName</td>
+                                <td><a href="@Url.Action("Detail", "Employee", new { name = item.EmployeeName })">@item.EmployeeName</a></td>
                                 <td class="text-center">@item.TotalTimeWorked.ToString("F2")</td>
                             </tr>
                         }

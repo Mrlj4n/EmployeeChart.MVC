@@ -1,0 +1,19 @@
+﻿@if (ViewBag.ImagePath != null)
+{
+    <div style="text-align:center;">
+        <h3>Pie Chart for Employee Time Worked</h3>
+        <img src="@ViewBag.ImagePath" alt="Employee Time Worked Pie Chart" style="max-width:100%; height:auto;" /> 
+        <div style="margin-top:20px;">
+            <p><strong>Chart Explanation:</strong></p>
+            <ul style="list-style-type:none;">
+                <li><span style="color:blue; font-weight:bold;">Blue</span>: Hours worked within the standard 176-hour month.</li>
+                <li><span style="color:red; font-weight:bold;">Red</span>: Hours worked beyond the standard monthly hours.</li>
+                <li><span style="color:gray; font-weight:bold;">Gray</span>: Hours not worked if under the standard monthly hours.</li>
+            </ul>
+        </div>
+    </div>
+}
+else
+{
+    <p style="text-align:center;">No data available to display the chart.</p>
+}

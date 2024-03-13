@@ -22,5 +22,12 @@ namespace EmployeeChart.MVC.Services
                 .OrderByDescending(e => e.TotalTimeWorked)
                 .ToList();
         }
+
+        public List<Employee> GetEmployeeEntriesByName(List<Employee> employees, string name)
+        {
+            return employees
+                .Where(entry => (string.IsNullOrWhiteSpace(entry.EmployeeName) ? "Unknown Employee" : entry.EmployeeName) == name && entry.DeletedOn == null)
+                .ToList();
+        }
     }
 }
